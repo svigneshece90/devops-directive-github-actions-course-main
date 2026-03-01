@@ -1,0 +1,23 @@
+name: Hello World
+
+on:
+  workflow_dispatch:
+
+jobs:
+  say-hello-inline-bash:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "Hello from an inline bash script in a GitHub Action Workflow!"
+  say-hello-from-python:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: print('Hello from a Python script in a GitHub Action Workflow!')
+        shell: python
+
+  say-hello-from-github-action:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Say Hello from a GitHub Action
+        uses: actions/hello-world-docker-action@v1  
+        with:
+          who-to-greet: 'GitHub Actions'     
