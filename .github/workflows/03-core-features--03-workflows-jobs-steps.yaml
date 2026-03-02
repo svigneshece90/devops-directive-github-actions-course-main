@@ -1,7 +1,11 @@
 name: Workflows, Jobs, and Steps
 
 on:
-  workflow_dispatch:
+  #workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'releases/**'
 jobs:
   job-1:
     runs-on: ubuntu-24.04
