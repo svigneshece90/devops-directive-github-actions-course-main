@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - 'releases/**'
+      - poc
 jobs:
   job-1:
     runs-on: ubuntu-24.04
