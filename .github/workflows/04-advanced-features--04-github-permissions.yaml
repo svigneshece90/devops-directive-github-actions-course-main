@@ -41,7 +41,8 @@ jobs:
     continue-on-error: true # Avoids failing entire workflow
     steps:
       - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
-      
+      - name: Install Github CLI
+        run: sudo apt-get update && sudo apt-get install -y git
       - name: List the first 5 open PRs (allowed)
         run: gh pr list --limit 5
         env:
