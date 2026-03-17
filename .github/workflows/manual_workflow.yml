@@ -6,9 +6,16 @@ on:
         description: 'An example input for the manual workflow'
         type: string
         default: 'Default value'
+      number-required:
+        description: 'A required input for the manual workflow'
+        type: number
+        required: true
 jobs:
   manual-job:
     runs-on: ubuntu-latest
     steps:
       - name: Manual Step
-        run: echo "${ { github.event.inputs.name } }"
+        run: echo "${{ github.event.inputs.name }}"
+
+      - name: Manual Step Required
+        run: echo "The required number is: ${{ github.event.inputs.number-required }}"
