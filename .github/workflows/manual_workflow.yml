@@ -1,6 +1,11 @@
 name: Manual Workflow
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: 'An example input for the manual workflow'
+        type: string
+        default: 'Default value'
 jobs:
   manual-job:
     runs-on: ubuntu-latest
