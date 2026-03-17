@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Manual Step
-        run: echo "${ { inputs.name } }"
+        run: echo "${ { github.event.inputs.name } }"
