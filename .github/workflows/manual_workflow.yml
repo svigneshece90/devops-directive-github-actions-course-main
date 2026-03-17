@@ -15,4 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Manual Step
-        run: echo "${ { github.event.inputs.name } }"
+        run: echo "${{ github.event.inputs.name }}"
+     
+      - name: Required Input Step
+        run: echo "The required number is: ${{ github.event.inputs.number-required }}"
