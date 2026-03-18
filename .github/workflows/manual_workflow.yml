@@ -1,6 +1,8 @@
 name: Manual Workflow
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */1 * * *' # This cron expression schedules the workflow to run every hour. You can adjust it as needed.
     inputs:
       name:
         description: 'An example input for the manual workflow'
