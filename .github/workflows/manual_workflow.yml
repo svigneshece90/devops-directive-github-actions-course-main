@@ -19,7 +19,7 @@ on:
           - Other
         default: 'Male'
       married-choice:
-        description: 'A boolean input for the manual workflow'
+        description: 'Is the person married?'
         type: boolean
         default: false
  
