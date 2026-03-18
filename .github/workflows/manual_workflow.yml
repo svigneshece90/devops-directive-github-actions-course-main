@@ -24,9 +24,6 @@ jobs:
     steps:
       - name: Manual Step
         run: echo "${{ github.event.inputs.name }}"
-     
-      - name: Required Input Step
-        run: echo "The required number is: ${{ github.event.inputs.number-required }}"
 
       - name: Choice Input Step
-        run: echo "The selected choice is: ${{ github.event.inputs.type-choice }}"
+        run: echo "${{ github.event.inputs.type-choice }}"
