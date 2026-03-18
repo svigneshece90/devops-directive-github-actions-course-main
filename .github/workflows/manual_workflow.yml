@@ -10,6 +10,14 @@ on:
         description: 'A required input for the manual workflow'
         type: number
         required: true
+      type-choice:
+        description: 'A dropdown input for the manual workflow'
+        type: choice
+        options:
+          - Option 1
+          - Option 2
+          - Option 3
+        default: 'Option 1'
 jobs:
   manual-job:
     runs-on: ubuntu-latest
@@ -19,3 +27,6 @@ jobs:
      
       - name: Required Input Step
         run: echo "The required number is: ${{ github.event.inputs.number-required }}"
+
+      - name: Choice Input Step
+        run: echo "The selected choice is: ${{ github.event.inputs.type-choice }}"
