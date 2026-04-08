@@ -1,0 +1,19 @@
+name: CI Execution
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run-custom-logic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Call Local Custom Action
+        # Path must point to the folder containing action.yml
+        uses: ./.action/
+        with:
+          who-to-greet: 'DevOps Team'
