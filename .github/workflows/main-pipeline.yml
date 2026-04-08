@@ -15,5 +15,3 @@ jobs:
       - name: Call Local Custom Action
         # Path must point to the folder containing action.yml
         uses: ./.github/actions/
-        with:
-          who-to-greet: 'DevOps Team'
