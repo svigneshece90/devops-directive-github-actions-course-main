@@ -1,27 +1,14 @@
-name: 'Action Name'
-description: 'What this action does'
-
+name: 'Hello World Action'
+description: 'Greets the user and logs a message'
 inputs:
-  name:
-    description: 'Name to greet'
-    required: false
-    default: 'World'
-
-outputs:
-  greeting:
-    description: 'The greeting message'
-    value: ${{ steps.greet.outputs.greeting }}
-
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: 'Engineer'
 runs:
-  # For more on composite actions, see:
-  # https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action
-  using: composite
+  using: 'composite'
   steps:
-    - id: greet
+    - run: echo "Hello ${{ inputs.who-to-greet }}"
       shell: bash
-      env:
-        INPUT_NAME: ${{ inputs.name }}
-      run: |
-        GREETING="Hello $INPUT_NAME"
-        echo "$GREETING"
-        echo "greeting=$GREETING" >> $GITHUB_OUTPUT
+    - run: echo "Action executed successfully!"
+      shell: bash
